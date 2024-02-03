@@ -7,7 +7,7 @@ const aviso = writable("Genere su contrasenas");
 
 const generar = () => {
 	let opccion = document.querySelector('#opcciones').value;
-	if (opccion === "numerico" && (longitud >= 4  && longitud < 14)) {
+	if (opccion === "numerico" && (longitud >= 4  && longitud <= 14)) {
 		for(let i = 0; i < longitud; i++) {
 			contrasenaStore.update((numeros) => {
 				numeros.push(Math.floor(Math.random() * 9));
@@ -16,7 +16,7 @@ const generar = () => {
 		}
 		contrasena.set($contrasenaStore.join(''));
 		contrasenaStore.set([]);
-	}else if(longitud >= 4 && longitud < 14){
+	}else if(longitud >= 4 && longitud <= 14){
 		const abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$@!_):,(%&0123456789";
 		const letras = Array.from(abecedario).slice(0, longitud).map(() => {
 			contrasenaStore.update((senha) => {
