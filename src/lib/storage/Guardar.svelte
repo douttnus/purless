@@ -40,7 +40,7 @@ const guardar = () => {
 	    	localStorage.setItem(key, JSON.stringify(value));
 	    	location.reload(true);
 		});
-	}else { alert('VOLTA CARAIO'); location.reload(true); }
+	}else { alert('Introduzca el nombre y la contraseña que desea almacenar'); location.reload(true); }
 };
 
 const eliminar = () => {

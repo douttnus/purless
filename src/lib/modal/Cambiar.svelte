@@ -14,19 +14,21 @@ onMount(() => {
 });
 
 const cambiar = () => {
-	ndtStore.set({
-		id: idItem,
-		site: nst,
-		user: user,
-		pass: ncs
-	});
+    if((nst && ncs) !== undefined) {
+        ndtStore.set({
+            id: idItem,
+            site: nst,
+            user: user,
+            pass: ncs
+        });
 
-	ndtStore.subscribe((value) => {
-		localStorage.setItem(
-			idItem, JSON.stringify(value)
-		);
-		location.reload(true);
-	});
+        ndtStore.subscribe((value) => {
+            localStorage.setItem(
+                idItem, JSON.stringify(value)
+            );
+            location.reload(true);
+        });
+    }else { alert('Introduzca el nombre y la contraseña que desea cambiar'); }
 };
 
 let nst, ncs;
