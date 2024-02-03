@@ -8,3 +8,5 @@ Asegúrate de tener la última versión de nodeJS en tu ordenador junto con npm,
 
 - npm install
 - npm run dev
+
+Entonces estás listo para usar Purless, gracias por eso.
