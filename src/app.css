@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-heebo {
+	font-family: 'Heebo', system-ui, sans-serif;
+}
+
+.font-workbench {
+	font-family: 'Workbench', system-ui, sans-serif;
+}
