@@ -49,6 +49,12 @@ const eliminar = () => {
 	location.reload(true);
 };
 
+const cambiar = () => {
+	const mdl = document.querySelector('#crud-modal');
+	mdl.classList.remove('hidden');
+	mdl.setAttribute('class', 'overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full');
+};
+
 const idd = writable('0');
 const usr = writable('');
 
@@ -78,7 +84,7 @@ export let st, us, cs;
 		 			<h3 class="font-medium text-gray-400">{dato.site}</h3>
 		 			<div class="flex items-center gap-2">
 		 				<span on:click={eliminar} class="text-sm cursor-pointer">Eliminar</span>
-		    			<span on:click={() => {
+		    			<span on:click={cambiar} on:click={() => {
 		    				idd.set(dato.id);
 		    				usr.set(dato.user);
 		    			}} class="text-sm cursor-pointer" data-modal-target="crud-modal" data-modal-toggle="crud-modal">Cambiar</span>
